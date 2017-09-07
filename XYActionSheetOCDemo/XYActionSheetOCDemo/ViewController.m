@@ -34,13 +34,17 @@
         subVC.view.backgroundColor = [UIColor whiteColor];
         NSLog(@"点击的index ---- %ld", index);
         if (titles.count > index) {
-            subVC.title = titles[index];
-            subVC.dismissButton.hidden = YES;
-            [self.navigationController pushViewController:subVC animated:YES];
+            if (index == 0) {
+                subVC.title = titles[index];
+                subVC.dismissButton.hidden = YES;
+                [self.navigationController pushViewController:subVC animated:YES];
+            }else {
+                subVC.dismissButton.hidden = NO;
+                [self presentViewController:subVC animated:YES completion:nil];
+            }
+            
         }else {
             // index == title.count 为取消操作
-            subVC.dismissButton.hidden = NO;
-            [self presentViewController:subVC animated:YES completion:nil];
         }
     }];
 
