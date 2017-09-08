@@ -28,7 +28,6 @@
 		直接将XYSideViewController文件夹下Swift文件添加到工程
  
 ## OC版本
-直接初始化调用
  
  ```
  // 定义菜单数组
@@ -40,5 +39,12 @@
  ```
  
 ## Swift版本
-coding 
+
  
+ ```
+ let titles = ["拍照", "从手机相册选择"]
+XYActionSheet.actionSheet().showActionSheetWithTitles(titles, { (index) in
+  // index 对应 title数组的下标 	
+  // index == title.count 为取消操作  
+ })
+ ```
